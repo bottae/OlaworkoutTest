@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADF8FD021CC12DED0075C752 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF8FD011CC12DED0075C752 /* VideoViewController.swift */; };
 		BC9E758C1A8CE4A500B1DF3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E758B1A8CE4A500B1DF3D /* AppDelegate.swift */; };
 		BC9E758E1A8CE4A500B1DF3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E758D1A8CE4A500B1DF3D /* ViewController.swift */; };
 		BC9E75911A8CE4A500B1DF3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC9E758F1A8CE4A500B1DF3D /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ADF8FD011CC12DED0075C752 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ../VideoViewController.swift; sourceTree = "<group>"; };
 		BC9E75861A8CE4A500B1DF3D /* KDCircularProgressExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KDCircularProgressExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC9E758A1A8CE4A500B1DF3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC9E758B1A8CE4A500B1DF3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		BC9E75881A8CE4A500B1DF3D /* KDCircularProgressExample */ = {
 			isa = PBXGroup;
 			children = (
+				ADF8FD011CC12DED0075C752 /* VideoViewController.swift */,
 				BC9E75AB1A8CE4B000B1DF3D /* KDCircularProgress */,
 				BC9E758B1A8CE4A500B1DF3D /* AppDelegate.swift */,
 				BC9E758D1A8CE4A500B1DF3D /* ViewController.swift */,
@@ -227,6 +230,7 @@
 			files = (
 				BC9E75AD1A8CE4CC00B1DF3D /* KDCircularProgress.swift in Sources */,
 				BC9E758E1A8CE4A500B1DF3D /* ViewController.swift in Sources */,
+				ADF8FD021CC12DED0075C752 /* VideoViewController.swift in Sources */,
 				BC9E758C1A8CE4A500B1DF3D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

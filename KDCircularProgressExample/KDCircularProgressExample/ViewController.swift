@@ -8,12 +8,20 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 
 class ViewController: UIViewController {
 
     var progress: KDCircularProgress!
     var timer:NSTimer!
     var initialValueTimer = 5
+    
+   
+    var playerViewController = AVPlayerViewController()
+    var playerView = AVPlayer()
+    
+    @IBOutlet weak var playButton: UIBarButtonItem!
+    @IBOutlet weak var webView: UIWebView!
     
     @IBOutlet var timerLabel: UILabel!
     
@@ -37,29 +45,57 @@ class ViewController: UIViewController {
         //progress.center = CGPoint(x: view.center.x, y: view.center.y + 25)
         progress.center = CGPoint(x: 100, y: 100)
         view.addSubview(progress)
-    }
-    
-    @IBAction func sliderDidChangeValue(sender: UISlider) {
-        progress.angle = Int(sender.value)
-    }
-    
-    @IBAction func animateButtonTapped(sender: UIButton) {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateTimer", userInfo: nil, repeats: true)
         
-        progress.animateToAngle(360, duration: 5) { completed in
+        
+        
+    }
+    
+    @IBAction func playButtonAction(sender: AnyObject) {
+        
+        progress.stopAnimation()
+        
+        progress.angle = 0
+        
+        initialValueTimer = 30
+        
+        progress.animateToAngle(360, duration: 30) { completed in
             if completed {
                 print("animation stopped, completed")
             } else {
                 print("animation stopped, was interrupted")
             }
         }
+        
+        let fileURL = NSURL(fileURLWithPath: "/Users/jaehalee/child.mp4")
+        playerView = AVPlayer(URL: fileURL)
+        
+        playerViewController.player = playerView
+        playerViewController.view.frame = CGRectMake(10,200,390,450)
+        self.addChildViewController(playerViewController)
+        
+        self.view.addSubview(playerViewController.view)
+        playerViewController.didMoveToParentViewController(self)
+        playerViewController.showsPlaybackControls = false
+        
+        var playerLayer = AVPlayerLayer(player: self.playerView)
+        playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
+        //playerViewController.player.AVPlayerLayer
+        //playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        
+        
+        playerViewController.player?.play()
+        
     }
+
     
     func updateTimer() {
         timerLabel.text = String(format:"%d", initialValueTimer)
         if initialValueTimer == 0 {
-            initialValueTimer = 5
+            initialValueTimer = 30
+            progress.angle = 0
+            
         } else {
             initialValueTimer -= 1
         }
