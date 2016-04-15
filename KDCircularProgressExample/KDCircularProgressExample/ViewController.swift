@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(white: 1.00, alpha: 1)
         
-        progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         progress.startAngle = -90
         progress.progressThickness = 0.2
         progress.trackThickness = 0.2
@@ -34,7 +34,8 @@ class ViewController: UIViewController {
         //progress.setColors(UIColor.cyanColor() ,UIColor.whiteColor(), UIColor.magentaColor(), UIColor.whiteColor(), UIColor.orangeColor())
         
         progress.setColors(UIColor.orangeColor() ,UIColor.orangeColor(), UIColor.orangeColor(), UIColor.orangeColor())
-        progress.center = CGPoint(x: view.center.x, y: view.center.y + 25)
+        //progress.center = CGPoint(x: view.center.x, y: view.center.y + 25)
+        progress.center = CGPoint(x: 100, y: 100)
         view.addSubview(progress)
     }
     
